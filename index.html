@@ -95,6 +95,12 @@
                 font-weight: 900;
                 letter-spacing: 0.14em;
                 text-transform: uppercase;
+                display: flex;
+                align-items: center;
+            }
+            .navbar-brand img {
+                height: 32px;
+                width: auto;
             }
             .nav-link {
                 font-weight: 700;
@@ -310,7 +316,9 @@
         <!-- ====== NAV ====== -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#top">SEANET</a>
+                <a class="navbar-brand" href="#top">
+                    <img src="logo.svg" alt="SeaNet" />
+                </a>
                 <button
                     class="navbar-toggler"
                     type="button"
