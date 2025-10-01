@@ -490,12 +490,7 @@
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="img-zoom">
-                            <img
-                                src=""
-                                class="img-fluid"
-                                alt="Map teaser"
-                                loading="lazy"
-                            />
+                            <div id="map" style="height:600px; width:100%;"></div>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex align-items-center">
@@ -1106,5 +1101,38 @@
             );
             document.querySelectorAll(".kpi").forEach((k) => kpio.observe(k));
         </script>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script>
+  var map = L.map('map').setView([41.59, 10.00], 5);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  fetch('map.csv')
+    .then(r => r.text())
+    .then(csv => {
+      Papa.parse(csv, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          results.data.forEach(row => {
+            try {
+              var geo = JSON.parse(row['.geo']);
+              var coords = geo.coordinates;
+              L.circleMarker([coords[1], coords[0]], {color: 'red'})
+                .addTo(map)
+                .bindPopup('Hotspot: ' + row.hotspot + '<br>Count: ' + row.count);
+            } catch(e) {
+              console.warn("Chybný řádek:", row);
+            }
+          });
+        }
+      });
+    });
+</script>
     </body>
 </html>
