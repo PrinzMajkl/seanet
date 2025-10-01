@@ -68,6 +68,7 @@
                 font-family: "Instrument Sans", system-ui, -apple-system,
                     Segoe UI, Roboto, "Helvetica Neue", Arial;
                 scroll-behavior: smooth;
+                overflow-x: hidden;
             }
             h1,
             h2,
@@ -180,6 +181,35 @@
                 }
                 .hero::before {
                     background: rgba(0, 0, 0, 0.6);
+                }
+            }
+
+            /* ====== Small screens fix (575px and below) ====== */
+            @media (max-width: 575.98px) {
+                .container,
+                .container-fluid {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    max-width: 100% !important;
+                    width: 100% !important;
+                }
+
+                .row {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+
+                .col,
+                [class*="col-"] {
+                    padding-left: 12px !important;
+                    padding-right: 12px !important;
+                }
+
+                .navbar .container {
+                    padding-left: 12px !important;
+                    padding-right: 12px !important;
                 }
             }
 
@@ -490,7 +520,10 @@
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="img-zoom">
-                            <div id="map" style="height:350px; width:100%;"></div>
+                            <div
+                                id="map"
+                                style="height: 350px; width: 100%"
+                            ></div>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex align-items-center">
@@ -774,18 +807,22 @@
         <section id="media" class="section pane-deep">
             <div class="container">
                 <div class="row g-4 align-items-center">
-                        <div class="eyebrow mb-1">Video</div>
-                        <h3 class="display-title fs-2 mt-0 mb-3">
-                            WATCH THE SEANET OVERVIEW
-                        </h3>
+                    <div class="eyebrow mb-1">Video</div>
+                    <h3 class="display-title fs-2 mt-0 mb-3">
+                        WATCH THE SEANET OVERVIEW
+                    </h3>
                     <div class="col-lg-6">
-                        
                         <div class="ratio ratio-16x9 card-clean">
                             <iframe
-                                src="https://youtu.be/okqqbnfjb2g"
+                                width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/okqqbnfjb2g"
                                 title="SeaNet Overview"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen
-                            ></iframe>
+                            >
+                            </iframe>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -1103,36 +1140,46 @@
         </script>
 
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css"
+        />
 
-<script>
-  var map = L.map('map').setView([41.2, 10.2], 7);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+        <script>
+            var map = L.map("map").setView([41.2, 10.2], 7);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                attribution: "© OpenStreetMap contributors",
+            }).addTo(map);
 
-  fetch('map.csv')
-    .then(r => r.text())
-    .then(csv => {
-      Papa.parse(csv, {
-        header: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          results.data.forEach(row => {
-            try {
-              var geo = JSON.parse(row['.geo']);
-              var coords = geo.coordinates;
-              L.circleMarker([coords[1], coords[0]], {color: 'red'})
-                .addTo(map)
-                .bindPopup('Hotspot: ' + row.hotspot + '<br>Count: ' + row.count);
-            } catch(e) {
-              console.warn("Chybný řádek:", row);
-            }
-          });
-        }
-      });
-    });
-</script>
+            fetch("map.csv")
+                .then((r) => r.text())
+                .then((csv) => {
+                    Papa.parse(csv, {
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: function (results) {
+                            results.data.forEach((row) => {
+                                try {
+                                    var geo = JSON.parse(row[".geo"]);
+                                    var coords = geo.coordinates;
+                                    L.circleMarker([coords[1], coords[0]], {
+                                        color: "red",
+                                    })
+                                        .addTo(map)
+                                        .bindPopup(
+                                            "Hotspot: " +
+                                                row.hotspot +
+                                                "<br>Count: " +
+                                                row.count
+                                        );
+                                } catch (e) {
+                                    console.warn("Chybný řádek:", row);
+                                }
+                            });
+                        },
+                    });
+                });
+        </script>
     </body>
 </html>
