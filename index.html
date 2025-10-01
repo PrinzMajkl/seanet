@@ -46,7 +46,7 @@
             :root {
                 --ink: #0b1220; /* near-black navy */
                 --ink-2: #12223d; /* deep ocean text */
-                --paper: #ebebd3 ; /* page background  #b6d8f0 */
+                --paper: #ebebd3; /* page background  #b6d8f0 */
                 --muted: #5b6b86; /* quiet text */
                 --border: #324376; /* primary blue border */
 
@@ -131,38 +131,32 @@
                 position: relative;
                 overflow: hidden;
                 border-bottom: 1px solid var(--border);
+                background-image: url("landing.jpg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             .hero::before {
                 content: "";
                 position: absolute;
                 inset: 0;
-                background: radial-gradient(
-                        1400px 600px at 70% -15%,
-                        rgba(42, 140, 255, 0.2),
-                        transparent 60%
-                    ),
-                    radial-gradient(
-                        1200px 500px at 0% -20%,
-                        rgba(31, 111, 214, 0.18),
-                        transparent 55%
-                    );
+                background: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.4) 40%,
+                    rgba(0, 0, 0, 0.1) 70%,
+                    transparent 100%
+                );
                 pointer-events: none;
-            }
-            .hero-img {
-                position: absolute;
-                inset: 0;
-                z-index: -1;
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-                filter: contrast(1.05) saturate(1.1) brightness(0.92);
             }
             .hero-wrap {
                 padding-top: 9.5rem;
                 padding-bottom: 5.5rem;
+                position: relative;
+                z-index: 1;
             }
             .hero-kicker {
-                color: var(--blue-700);
+                color: #f5f5dc;
                 font-weight: 900;
                 letter-spacing: 0.22em;
                 text-transform: uppercase;
@@ -171,10 +165,11 @@
             .hero h1 {
                 font-size: clamp(2.6rem, 6vw, 5rem);
                 line-height: 1.02;
+                color: #f5f5dc;
             }
             .hero .lead {
                 font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-                color: var(--ink-2);
+                color: #f5f5dc;
                 max-width: 52ch;
             }
 
@@ -182,6 +177,9 @@
             @media (max-width: 991.98px) {
                 .hero .order-1 {
                     margin-top: 0 !important;
+                }
+                .hero::before {
+                    background: rgba(0, 0, 0, 0.6);
                 }
             }
 
@@ -205,6 +203,16 @@
                 border-radius: 0;
                 padding: 0.8rem 1.1rem;
                 font-weight: 800;
+                border-color: var(--paper);
+            }
+            .hero .btn-outline-dark {
+                color: var(--paper);
+                border-color: var(--paper);
+            }
+            .hero .btn-outline-dark:hover {
+                background-color: var(--paper);
+                border-color: var(--paper);
+                color: var(--ink);
             }
 
             /* ====== Editorial cards, image zoom ====== */
@@ -384,32 +392,16 @@
 
         <!-- ====== HERO (full-bleed, Colossal-style) ====== -->
         <header id="top" class="hero">
-            <img
-                class="hero-img"
-                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop"
-                alt="Open ocean"
-                loading="eager"
-            />
             <div class="hero-wrap container">
                 <div class="row align-items-center g-5">
-                    <div class="col-lg-5 order-1 order-lg-2">
-                        <div class="text-center">
-                            <img
-                                src="landing.jpg"
-                                alt="SeaNet Landing"
-                                class="img-fluid"
-                                loading="eager"
-                            />
-                        </div>
-                    </div>
-                    <div class="col-lg-7 order-2 order-lg-1">
+                    <div class="col-lg-7">
                         <div class="hero-kicker mb-3">Ocean Intelligence</div>
                         <h1 class="display-title mb-3">
                             A FORECAST MAP FOR OCEAN PLASTICS
                         </h1>
                         <p class="lead mb-4">
-                            SeaNet detects macroplastics in near-real time,
-                            predicts their drift like a weather system, and
+                            SeaNet detects macroplastics in near-real time,<br>
+                            predicts their drift like a weather system,<br>and
                             reveals evolving hotspots on an interactive,
                             radar-style map.
                         </p>
@@ -499,8 +491,8 @@
                     <div class="col-lg-6">
                         <div class="img-zoom">
                             <img
-                                src="https://images.unsplash.com/photo-1505765052322-75804bbd38f4?q=80&w=1400&auto=format&fit=crop"
-                                class="img-fluid rounded-4"
+                                src="map.png"
+                                class="img-fluid"
                                 alt="Map teaser"
                                 loading="lazy"
                             />
@@ -658,7 +650,11 @@
                             FROM SIGNAL TO STRATEGY
                         </h2>
                         <p class="text-muted">
-                            By turning hidden threats into visible data, our real-time macroplastic tracking empowers scientists, cleanup teams, and communities to act where it matters most — protecting marine life and keeping oceans healthier.
+                            By turning hidden threats into visible data, our
+                            real-time macroplastic tracking empowers scientists,
+                            cleanup teams, and communities to act where it
+                            matters most — protecting marine life and keeping
+                            oceans healthier.
                         </p>
                     </div>
                 </div>
@@ -673,12 +669,19 @@
                                     alt="Coastline"
                                     loading="lazy"
                                 />
+                                <div class="text-end mt-1">
+                                    Author: Francis Perez
+                                </div>
                             </div>
                             <h5>Ghosts into Warnings - Ghost Nets</h5>
                             <p class="small text-muted mb-0">
-                                Up to 10% of marine litter comes from lost fishing gear, which entangles and kills around 640,000 marine animals every year. Our real-time tracking database shows exactly where nets are drifting, helping cleanup teams act fast and save lives.
+                                Up to 10% of marine litter comes from lost
+                                fishing gear, which entangles and kills around
+                                640,000 marine animals every year. Our real-time
+                                tracking database shows exactly where nets are
+                                drifting, helping cleanup teams act fast and
+                                save lives.
                             </p>
-                            
                         </article>
                     </div>
                     <div class="col-md-6 col-lg-4">
@@ -691,11 +694,16 @@
                                     loading="lazy"
                                 />
                             </div>
-                            <h5>Uncovering the Everyday Flood - Plastic Bottles</h5>
+                            <h5>
+                                Uncovering the Everyday Flood - Plastic Bottles
+                            </h5>
                             <p class="small text-muted mb-0">
-                                More than 1 million plastic bottles are sold every minute, many ending up in rivers and oceans. We map hotspots so cleanup teams can act fast, making removals quicker and more efficient.
+                                More than 1 million plastic bottles are sold
+                                every minute, many ending up in rivers and
+                                oceans. We map hotspots so cleanup teams can act
+                                fast, making removals quicker and more
+                                efficient.
                             </p>
-                            
                         </article>
                     </div>
                     <div class="col-md-6 col-lg-4">
@@ -710,9 +718,13 @@
                             </div>
                             <h5>Wrappers: Small Pieces, Big Consequences</h5>
                             <p class="small text-muted mb-0">
-                                Wrappers rank among the top 10 coastal plastics and are often fatal when seabirds and turtles mistake them for food. Our system highlights where they cluster, saving scientists hours of searching. Removing just 10,000 wrappers could spare hundreds of seabirds from starvation.
+                                Wrappers rank among the top 10 coastal plastics
+                                and are often fatal when seabirds and turtles
+                                mistake them for food. Our system highlights
+                                where they cluster, saving scientists hours of
+                                searching. Removing just 10,000 wrappers could
+                                spare hundreds of seabirds from starvation.
                             </p>
-                            
                         </article>
                     </div>
                 </div>
@@ -728,7 +740,6 @@
                         <h4 class="mb-3">
                             Built with & for the ocean community.
                         </h4>
-                        
                     </div>
                     <div class="col-lg-9">
                         <div class="d-flex flex-wrap gap-4 logo-strip">
@@ -752,7 +763,7 @@
                                 alt="Google Earth Engine logo"
                                 loading="lazy"
                             />
-                            
+
                             <img
                                 src="https://www.esa.int/extension/pillars/design/pillars/images/ESA_Logo.svg"
                                 alt="ESA logo"
@@ -775,7 +786,7 @@
                         </h3>
                         <div class="ratio ratio-16x9 card-clean">
                             <iframe
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                src="https://youtu.be/okqqbnfjb2g"
                                 title="SeaNet Overview"
                                 allowfullscreen
                             ></iframe>
