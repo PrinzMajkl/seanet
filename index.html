@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>SeaNet — A Forecast Map for Ocean Plastics</title>
+        <title>SeaNet — Ocean Intelligence Platform</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
             name="description"
-            content="SeaNet detects macroplastics and forecasts their drift, visualized on an interactive map. Colossal-inspired editorial design in ocean blues."
+            content="SeaNet detects macroplastics and forecasts their drift, visualized on an interactive map. Scalable ocean intelligence for environmental and commercial applications."
         />
 
         <link
@@ -65,8 +65,14 @@
             body {
                 background: var(--paper);
                 color: var(--ink);
-                font-family: "Instrument Sans", system-ui, -apple-system,
-                    Segoe UI, Roboto, "Helvetica Neue", Arial;
+                font-family:
+                    "Instrument Sans",
+                    system-ui,
+                    -apple-system,
+                    Segoe UI,
+                    Roboto,
+                    "Helvetica Neue",
+                    Arial;
                 scroll-behavior: smooth;
                 overflow-x: hidden;
             }
@@ -297,40 +303,14 @@
                 color: var(--muted);
             }
 
-            /* ====== Timeline ====== */
-            .timeline {
-                position: relative;
-                padding-left: 1.5rem;
-            }
-            .timeline::before {
-                content: "";
-                position: absolute;
-                left: 0.45rem;
-                top: 0.2rem;
-                bottom: 0.2rem;
-                width: 2px;
-                background: var(--border);
-            }
-            .timeline-item {
-                position: relative;
-                margin-bottom: 1.35rem;
-            }
-            .timeline-item::before {
-                content: "";
-                position: absolute;
-                left: -0.05rem;
-                top: 0.35rem;
-                width: 0.85rem;
-                height: 0.85rem;
-                background: var(--blue-600);
-            }
-
             /* ====== Partners strip ====== */
             .logo-strip img {
                 max-height: 38px;
                 opacity: 0.9;
                 filter: grayscale(100%);
-                transition: opacity 0.2s, filter 0.2s;
+                transition:
+                    opacity 0.2s,
+                    filter 0.2s;
             }
             .logo-strip img:hover {
                 opacity: 1;
@@ -355,7 +335,9 @@
             .fade-up {
                 opacity: 0;
                 transform: translateY(18px);
-                transition: opacity 0.7s ease, transform 0.7s ease;
+                transition:
+                    opacity 0.7s ease,
+                    transform 0.7s ease;
             }
             .fade-up.appear {
                 opacity: 1;
@@ -401,9 +383,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#results">Results</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#roadmap">Roadmap</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#team">Team</a>
@@ -559,112 +538,102 @@
             </div>
         </section>
 
-        <!-- ====== TECHNOLOGY (editorial, exact text) ====== -->
+        <!-- ====== TECHNOLOGY (condensed for landing page) ====== -->
         <section id="technology" class="section">
             <div class="container">
-                <div class="row g-5 align-items-start">
-                    <div class="col-lg-6">
-                        <div class="eyebrow mb-2">Technology</div>
-                        <h2 class="display-title fs-1 mb-4">
-                            HOW SEANET WORKS
-                        </h2>
+                <div class="eyebrow mb-2">Technology</div>
+                <h2 class="display-title fs-1 mb-4">HOW SEANET WORKS</h2>
 
-                        <!-- Exact user-provided description -->
-                        <div class="content fs-6 lh-lg fade-up">
-                            <p>
-                                SeaNet is a powerful, scalable tool for tracking
-                                marine plastic pollution. Its main functions are
-                                to detect and locate macroplastics in near
-                                real-time and to forecast their movement over
-                                the coming days, much like a weather prediction
-                                system. Results are displayed on an interactive
-                                map similar to a meteoradar, allowing users to
-                                quickly identify emerging plastic hotspots.
-                            </p>
-                            <p>
-                                SeaNet doesn’t stop at local predictions—it
-                                applies its models globally, creating a unified
-                                forecast system. The platform also calculates
-                                the surface area of plastic-affected zones,
-                                giving stakeholders actionable insights for
-                                planning clean-ups, assessing ecological risks,
-                                and supporting evidence-based decision-making.
-                            </p>
-                            <h3 class="mb-3">Technology Behind SeaNet</h3>
-                            <p>
-                                SeaNet combines Blue-Cloud’s Marine
-                                Environmental Indicators VLab (VLab 2) with the
-                                Virtual Research Environment (VRE) to run
-                                particle-drift models seeded by detections.
-                                Using Sentinel-2 Level-2A satellite
-                                imageryprocessed in Google Earth Engine, the
-                                system applies masks and calculates indices such
-                                as FDI, NDPI, and NDWI to identify macroplastic
-                                patches. These detections are validated against
-                                hotspot studies and converted into polygons or
-                                centroids, which feed into short-term forecasts.
-                            </p>
-                            <h3 class="mb-3">Innovative Insights</h3>
-                            <p>
-                                The system leverages VLab 2 for analytics and
-                                the VRE for reproducible simulations, while
-                                currents and wind fields from Blue-Cloud
-                                workbenches drive trajectory forecasts. Where
-                                relevant, outputs can integrate with EDITO for
-                                Europe’s Digital Twin Ocean.
-                            </p>
-                            <p>
-                                With robust datasets—including Sentinel-2
-                                imagery and Mediterranean hotspot studies—SeaNet
-                                offers a scientifically rigorous, scalable
-                                solution that bridges innovation, policy, and
-                                citizen engagement in tackling marine plastic
-                                pollution.
-                            </p>
+                <div class="content fs-6 lh-lg fade-up mb-5">
+                    <p>
+                        SeaNet combines satellite imagery, ocean models, and
+                        machine learning into one scalable platform for tracking
+                        objects at sea. The system processes Sentinel-2 data to
+                        detect targets, seeds particle-drift simulations with
+                        real-time met-ocean forcing, and delivers short-term
+                        trajectory forecasts on an interactive radar-style map.
+                    </p>
+                </div>
+
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="card-clean p-4 p-md-5 fade-up">
+                            <div class="eyebrow mb-2">Pipeline</div>
+                            <h4 class="mb-3">From Detection to Action</h4>
+                            <div class="d-flex align-items-start mb-3">
+                                <i
+                                    class="bi bi-search me-3 mt-1"
+                                    style="
+                                        font-size: 1.5rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                                <div>
+                                    <h6 class="mb-1">1. Detect</h6>
+                                    <p class="small text-muted mb-0">
+                                        Sentinel-2 imagery → spectral indices →
+                                        target identification.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i
+                                    class="bi bi-check2-circle me-3 mt-1"
+                                    style="
+                                        font-size: 1.5rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                                <div>
+                                    <h6 class="mb-1">2. Validate</h6>
+                                    <p class="small text-muted mb-0">
+                                        Cross-reference with known data →
+                                        confirmed locations.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-3">
+                                <i
+                                    class="bi bi-wind me-3 mt-1"
+                                    style="
+                                        font-size: 1.5rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                                <div>
+                                    <h6 class="mb-1">3. Forecast</h6>
+                                    <p class="small text-muted mb-0">
+                                        Particle drift models driven by currents
+                                        &amp; wind.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <i
+                                    class="bi bi-map me-3 mt-1"
+                                    style="
+                                        font-size: 1.5rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                                <div>
+                                    <h6 class="mb-1">4. Deliver</h6>
+                                    <p class="small text-muted mb-0">
+                                        Interactive map with areas, trajectories
+                                        &amp; confidence.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-6">
-                        <!-- Data flow diagram placeholder as editorial card -->
-                        <div class="card-clean p-4 p-md-5 fade-up">
-                            <div class="eyebrow mb-2">Data Flow</div>
-                            <h4 class="mb-3">From Detection to Action</h4>
-                            <ol class="mb-4">
-                                <li>
-                                    <strong>Detect:</strong> Sentinel-2 L2A →
-                                    masks &amp; FDI/NDPI/NDWI → macroplastic
-                                    cues.
-                                </li>
-                                <li>
-                                    <strong>Validate:</strong> compare with
-                                    hotspot studies → polygons/centroids.
-                                </li>
-                                <li>
-                                    <strong>Forecast:</strong> seed particle
-                                    drift models in Blue-Cloud VRE (VLab 2
-                                    core).
-                                </li>
-                                <li>
-                                    <strong>Force:</strong> met-ocean data
-                                    (currents &amp; wind) from workbenches.
-                                </li>
-                                <li>
-                                    <strong>Deliver:</strong> interactive
-                                    “meteoradar” map + areas &amp; confidence.
-                                </li>
-                            </ol>
-                            <div class="img-zoom mb-3">
-                                <img
-                                    src="map.png"
-                                    class="img-fluid"
-                                    alt="Abstract ocean currents"
-                                    loading="lazy"
-                                />
-                            </div>
-                            <p class="text-muted small mb-0">
-                                Outputs designed for alignment with EDITO and
-                                Europe’s Digital Twin Ocean.
-                            </p>
+                    <div class="col-lg-7">
+                        <div class="img-zoom fade-up">
+                            <img
+                                src="map.png"
+                                class="img-fluid"
+                                alt="Abstract ocean currents"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </div>
@@ -682,15 +651,16 @@
                         </h2>
                         <p class="text-muted">
                             By turning hidden threats into visible data, our
-                            real-time macroplastic tracking empowers scientists,
-                            cleanup teams, and communities to act where it
-                            matters most — protecting marine life and keeping
-                            oceans healthier.
+                            real-time tracking empowers scientists, cleanup
+                            teams, logistics operators, and communities to act
+                            where it matters most — protecting marine life and
+                            unlocking commercial value from ocean intelligence.
                         </p>
                     </div>
                 </div>
 
                 <div class="row g-4">
+                    <!-- Environmental: Ghost Nets -->
                     <div class="col-md-6 col-lg-4">
                         <article class="card-clean p-3 fade-up h-100">
                             <div class="img-zoom mb-3">
@@ -704,7 +674,7 @@
                                     Author: Francis Perez
                                 </div>
                             </div>
-                            <h5>Ghosts into Warnings - Ghost Nets</h5>
+                            <h5>Ghosts into Warnings — Ghost Nets</h5>
                             <p class="small text-muted mb-0">
                                 Up to 10% of marine litter comes from lost
                                 fishing gear, which entangles and kills around
@@ -715,6 +685,7 @@
                             </p>
                         </article>
                     </div>
+                    <!-- Environmental: Plastic Bottles -->
                     <div class="col-md-6 col-lg-4">
                         <article class="card-clean p-3 fade-up h-100">
                             <div class="img-zoom mb-3">
@@ -726,7 +697,7 @@
                                 />
                             </div>
                             <h5>
-                                Uncovering the Everyday Flood - Plastic Bottles
+                                Uncovering the Everyday Flood — Plastic Bottles
                             </h5>
                             <p class="small text-muted mb-0">
                                 More than 1 million plastic bottles are sold
@@ -737,6 +708,7 @@
                             </p>
                         </article>
                     </div>
+                    <!-- Environmental: Wrappers -->
                     <div class="col-md-6 col-lg-4">
                         <article class="card-clean p-3 fade-up h-100">
                             <div class="img-zoom mb-3">
@@ -755,6 +727,97 @@
                                 where they cluster, saving scientists hours of
                                 searching. Removing just 10,000 wrappers could
                                 spare hundreds of seabirds from starvation.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Commercial Applications -->
+                <div class="row mt-5 mb-3">
+                    <div class="col-lg-8">
+                        <div class="eyebrow">Commercial Use</div>
+                        <h2 class="display-title fs-2">
+                            BEYOND PLASTICS — OCEAN LOGISTICS
+                        </h2>
+                        <p class="text-muted">
+                            The same satellite detection and drift-forecasting
+                            engine that tracks plastic pollution can be applied
+                            to commercial maritime challenges — from lost cargo
+                            to fleet optimization.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card-clean p-3 fade-up h-100">
+                            <div
+                                class="p-3 text-center mb-3"
+                                style="background: var(--blue-50)"
+                            >
+                                <i
+                                    class="bi bi-box-seam"
+                                    style="
+                                        font-size: 3rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                            </div>
+                            <h5>Container & Cargo Localization</h5>
+                            <p class="small text-muted mb-0">
+                                Every year an estimated 1,000+ shipping
+                                containers are lost at sea. SeaNet's drift
+                                prediction models can locate and forecast the
+                                trajectory of lost containers, reducing recovery
+                                time and costs for insurers and shipping lines.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card-clean p-3 fade-up h-100">
+                            <div
+                                class="p-3 text-center mb-3"
+                                style="background: var(--blue-50)"
+                            >
+                                <i
+                                    class="bi bi-geo-alt"
+                                    style="
+                                        font-size: 3rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                            </div>
+                            <h5>Maritime Asset Tracking</h5>
+                            <p class="small text-muted mb-0">
+                                Ports, offshore operators, and aquaculture farms
+                                can use SeaNet to monitor floating assets and
+                                infrastructure in near-real time — reducing
+                                losses and improving operational planning
+                                through satellite-based awareness.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card-clean p-3 fade-up h-100">
+                            <div
+                                class="p-3 text-center mb-3"
+                                style="background: var(--blue-50)"
+                            >
+                                <i
+                                    class="bi bi-shield-check"
+                                    style="
+                                        font-size: 3rem;
+                                        color: var(--blue-600);
+                                    "
+                                ></i>
+                            </div>
+                            <h5>Risk Assessment & Insurance</h5>
+                            <p class="small text-muted mb-0">
+                                Insurers and coastal planners can leverage
+                                SeaNet's hotspot data and drift forecasts to
+                                quantify marine debris risk, optimize policy
+                                pricing, and support evidence-based damage
+                                prevention strategies.
                             </p>
                         </article>
                     </div>
@@ -822,7 +885,15 @@
                                 src="https://www.youtube.com/embed/okqqbnfjb2g"
                                 title="SeaNet Overview"
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allow="
+                                    accelerometer;
+                                    autoplay;
+                                    clipboard-write;
+                                    encrypted-media;
+                                    gyroscope;
+                                    picture-in-picture;
+                                    web-share;
+                                "
                                 allowfullscreen
                             >
                             </iframe>
@@ -851,71 +922,6 @@
             </div>
         </section>
 
-        <!-- ====== ROADMAP ====== -->
-        <section id="roadmap" class="section">
-            <div class="container">
-                <div class="row mb-4">
-                    <div class="col-lg-8">
-                        <div class="eyebrow">Roadmap</div>
-                        <h2 class="display-title fs-2">
-                            FROM MVP TO GLOBAL COVERAGE
-                        </h2>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <div class="col-lg-7">
-                        <div class="timeline">
-                            <div class="timeline-item ps-4">
-                                <h6 class="mb-1">Q4 2025 — MVP pilot</h6>
-                                <p class="text-muted small mb-0">
-                                    Mediterranean pilot with weekly map refresh;
-                                    validate indices vs. hotspot studies.
-                                </p>
-                            </div>
-                            <div class="timeline-item ps-4">
-                                <h6 class="mb-1">Q1 2026 — Web app & API</h6>
-                                <p class="text-muted small mb-0">
-                                    Public viewer, exportable GeoJSON, &
-                                    programmatic endpoints.
-                                </p>
-                            </div>
-                            <div class="timeline-item ps-4">
-                                <h6 class="mb-1">Q2 2026 — EDITO alignment</h6>
-                                <p class="text-muted small mb-0">
-                                    Conform outputs for Digital Twin Ocean
-                                    integration and skill dashboards.
-                                </p>
-                            </div>
-                            <div class="timeline-item ps-4">
-                                <h6 class="mb-1">H2 2026 — Scale</h6>
-                                <p class="text-muted small mb-0">
-                                    Global coverage & partnerships with ports,
-                                    NGOs, and coastal cities.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="card-clean p-4 p-md-5">
-                            <div class="eyebrow mb-2">Get involved</div>
-                            <h4 class="mb-3">Pilot with SeaNet</h4>
-                            <p class="text-muted">
-                                We’re seeking coastal cities, NGOs, and research
-                                groups to co-design playbooks and verify model
-                                skill.
-                            </p>
-                            <a
-                                class="btn btn-primary"
-                                href="mailto:info@sea-net.eu"
-                                ><i class="bi bi-people-fill me-1"></i> Join the
-                                pilot</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ====== TEAM ====== -->
         <section id="team" class="section pane-soft">
             <div class="container">
@@ -931,6 +937,26 @@
                 </div>
 
                 <div class="row g-4">
+                    <!-- Samuel — CEO -->
+                    <div class="col-6 col-md-4 col-lg">
+                        <div class="card-clean p-3 h-100 text-center fade-up">
+                            <img
+                                src="sam.jpeg"
+                                alt="Member"
+                                class="img-fluid mb-3"
+                                loading="lazy"
+                            />
+                            <h6 class="mb-0">Samuel Jancík</h6>
+                            <div class="text-muted small mb-2">CEO</div>
+                            <a
+                                class="text-decoration-none"
+                                href="https://www.linkedin.com/in/samueljancík"
+                                target="_blank"
+                                ><i class="bi bi-linkedin"></i
+                            ></a>
+                        </div>
+                    </div>
+                    <!-- Kristýna — CSO -->
                     <div class="col-6 col-md-4 col-lg">
                         <div class="card-clean p-3 h-100 text-center fade-up">
                             <img
@@ -940,7 +966,9 @@
                                 loading="lazy"
                             />
                             <h6 class="mb-0">Kristýna Říhová</h6>
-                            <div class="text-muted small mb-2">Co-leader</div>
+                            <div class="text-muted small mb-2">
+                                Chief Scientific Officer
+                            </div>
                             <a
                                 class="text-decoration-none"
                                 href="https://www.linkedin.com/in/krist%C3%BDna-%C5%99%C3%ADhov%C3%A1-974163343/"
@@ -949,6 +977,7 @@
                             ></a>
                         </div>
                     </div>
+                    <!-- Albert — CTO -->
                     <div class="col-6 col-md-4 col-lg">
                         <div class="card-clean p-3 h-100 text-center fade-up">
                             <img
@@ -958,9 +987,7 @@
                                 loading="lazy"
                             />
                             <h6 class="mb-0">Albert Schwanzer</h6>
-                            <div class="text-muted small mb-2">
-                                Co-leader, Business and Strategy
-                            </div>
+                            <div class="text-muted small mb-2">CTO</div>
                             <a
                                 class="text-decoration-none"
                                 href="https://www.linkedin.com/in/albert-schwanzer/"
@@ -969,24 +996,7 @@
                             ></a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-4 col-lg">
-                        <div class="card-clean p-3 h-100 text-center fade-up">
-                            <img
-                                src="dave.png"
-                                alt="Member"
-                                class="img-fluid mb-3"
-                                loading="lazy"
-                            />
-                            <h6 class="mb-0">David Nohejl</h6>
-                            <div class="text-muted small mb-2">Developer</div>
-                            <a
-                                class="text-decoration-none"
-                                href="https://www.linkedin.com/in/davidnohejl/"
-                                target="_blank"
-                                ><i class="bi bi-linkedin"></i
-                            ></a>
-                        </div>
-                    </div>
+                    <!-- Michal — IT Development -->
                     <div class="col-6 col-md-4 col-lg">
                         <div class="card-clean p-3 h-100 text-center fade-up">
                             <img
@@ -997,7 +1007,7 @@
                             />
                             <h6 class="mb-0">Michal Branda</h6>
                             <div class="text-muted small mb-2">
-                                Chief Technology Officer
+                                IT Development
                             </div>
                             <a
                                 class="text-decoration-none"
@@ -1007,24 +1017,28 @@
                             ></a>
                         </div>
                     </div>
+                    <!-- David — IT Development -->
                     <div class="col-6 col-md-4 col-lg">
                         <div class="card-clean p-3 h-100 text-center fade-up">
                             <img
-                                src="jan.jpg"
+                                src="dave.png"
                                 alt="Member"
                                 class="img-fluid mb-3"
                                 loading="lazy"
                             />
-                            <h6 class="mb-0">Jan Cidlina</h6>
-                            <div class="text-muted small mb-2">Designer</div>
+                            <h6 class="mb-0">David Nohejl</h6>
+                            <div class="text-muted small mb-2">
+                                IT Development
+                            </div>
                             <a
                                 class="text-decoration-none"
-                                href="https://www.linkedin.com/in/jancidlina/"
+                                href="https://www.linkedin.com/in/davidnohejl/"
                                 target="_blank"
                                 ><i class="bi bi-linkedin"></i
                             ></a>
                         </div>
                     </div>
+                    <!-- Eduard — IT Development -->
                     <div class="col-6 col-md-4 col-lg">
                         <div class="card-clean p-3 h-100 text-center fade-up">
                             <img
@@ -1034,30 +1048,12 @@
                                 loading="lazy"
                             />
                             <h6 class="mb-0">Eduard Červinka</h6>
-                            <div class="text-muted small mb-2">Developer</div>
-                            <a
-                                class="text-decoration-none"
-                                href="https://www.linkedin.com/in/eduardcervinka/"
-                                target="_blank"
-                                ><i class="bi bi-linkedin"></i
-                            ></a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg">
-                        <div class="card-clean p-3 h-100 text-center fade-up">
-                            <img
-                                src="sam.jpeg"
-                                alt="Member"
-                                class="img-fluid mb-3"
-                                loading="lazy"
-                            />
-                            <h6 class="mb-0">Samuel Jancík</h6>
                             <div class="text-muted small mb-2">
-                                Business and Strategy
+                                IT Development
                             </div>
                             <a
                                 class="text-decoration-none"
-                                href="https://www.linkedin.com/in/samueljancík"
+                                href="https://www.linkedin.com/in/eduardcervinka/"
                                 target="_blank"
                                 ><i class="bi bi-linkedin"></i
                             ></a>
@@ -1075,7 +1071,8 @@
                         <div
                             class="h3 mb-1"
                             style="
-                                font-family: 'Playfair Display', serif;
+                                font-family:
+                                    &quot;Playfair Display&quot;, serif;
                                 letter-spacing: 0.14em;
                                 text-transform: uppercase;
                                 font-weight: 900;
@@ -1096,7 +1093,6 @@
                         <ul class="list-unstyled">
                             <li><a href="#technology">Technology</a></li>
                             <li><a href="#results">Results</a></li>
-                            <li><a href="#roadmap">Roadmap</a></li>
                             <li><a href="#team">Team</a></li>
                         </ul>
                     </div>
@@ -1131,7 +1127,7 @@
                         }
                     });
                 },
-                { threshold: 0.16 }
+                { threshold: 0.16 },
             );
             document
                 .querySelectorAll(".fade-up")
@@ -1159,7 +1155,7 @@
                         }
                     });
                 },
-                { threshold: 0.5 }
+                { threshold: 0.5 },
             );
             document.querySelectorAll(".kpi").forEach((k) => kpio.observe(k));
         </script>
@@ -1196,7 +1192,7 @@
                                             "Hotspot: " +
                                                 row.hotspot +
                                                 "<br>Count: " +
-                                                row.count
+                                                row.count,
                                         );
                                 } catch (e) {
                                     console.warn("Chybný řádek:", row);
